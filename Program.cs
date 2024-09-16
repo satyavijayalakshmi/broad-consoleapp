@@ -23,9 +23,6 @@ namespace FileSearchApp
             string ouputFilePath = args[1];
             ValidateInputFile(inputFilePath);
 
-
-            //TO-DO: Do I need to check for file extension?
-
             Console.WriteLine("Application is running with the following arguments:");
             Console.WriteLine($"Argument 1: {inputFilePath}");
             Console.WriteLine($"Argument 2: {ouputFilePath}");
