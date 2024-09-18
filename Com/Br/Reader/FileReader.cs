@@ -4,12 +4,12 @@ using System.Text;
 
 namespace Com.Br.Reader
 {
-    public class FileReader
+    public class FileReader : IFileReader
     {
 
         private const int FileBufferReadSize = 8192;
 
-        public static async IAsyncEnumerable<string> ReadInputFile(string inputFilePath)
+        public async IAsyncEnumerable<string> ReadInputFile(string inputFilePath)
         {
             StreamReader inputFileStreamReader = null;
 

@@ -1,9 +1,9 @@
-namespace Com.Br.Counter
+namespace Com.Br.Sorter
 {
-    public class WordSorter
+    public class WordSorter : IWordSorter
     {
 
-        public static Dictionary<string, int> Sorter(Dictionary<string, int> wordCountResult)
+        public Dictionary<string, int> Sorter(Dictionary<string, int> wordCountResult)
         {
             if (wordCountResult != null)
             {

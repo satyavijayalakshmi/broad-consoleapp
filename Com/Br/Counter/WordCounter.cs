@@ -2,11 +2,11 @@ using System.Collections.Generic;
 
 namespace Com.Br.Counter
 {
-    public class WordCounter
+    public class WordCounter : IWordCounter
     {
-        public static Dictionary<string, int> wordCountStore = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+        public Dictionary<string, int> wordCountStore = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
 
-        public static async Task<Dictionary<string, int>> Counter(string inputLine)
+        public async Task<Dictionary<string, int>> Counter(string inputLine)
         {
 
             if (string.IsNullOrWhiteSpace(inputLine))

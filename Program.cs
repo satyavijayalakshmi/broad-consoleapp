@@ -1,4 +1,10 @@
 ﻿using Com.Br;
+using Com.Br.Counter;
+using Com.Br.Reader;
+using Com.Br.Sorter;
+using Com.Br.Writer;
+using FileSearchApp.Com.Br;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FileSearchApp
 {
@@ -6,6 +12,13 @@ namespace FileSearchApp
     {
         static async Task Main(string[] args)
         {
+
+            var serviceCollection = new ServiceCollection();
+
+            ConfigureServices(serviceCollection);
+
+            var serviceProvider = serviceCollection.BuildServiceProvider();
+
             Console.WriteLine("############################### Input ########################################");
             if (args.Length == 0 || args[0] == "--help" || args[0] == "-h")
             {
@@ -32,9 +45,10 @@ namespace FileSearchApp
             
             Console.WriteLine("Application is running with the following arguments:");
             Console.WriteLine($"Argument 1: {inputFilePath}");
-            Console.WriteLine($"Argument 2: {ouputFilePath}");            
+            Console.WriteLine($"Argument 2: {ouputFilePath}");
 
-            await FileAnalyzer.ProcessFile(inputFilePath, ouputFilePath);
+            var fileAnalyzerService = serviceProvider.GetService<IFileAnalyzer>();
+            fileAnalyzerService?.ProcessFile(inputFilePath, ouputFilePath);
 
 
         }
@@ -82,6 +96,15 @@ namespace FileSearchApp
         static void OutFilePathError()
         {
             Console.WriteLine($"[arg2] is missing - Please provide output file path to publish the results");
+        }
+
+        private static void ConfigureServices(IServiceCollection services)
+        {
+            services.AddTransient<IFileAnalyzer, FileAnalyzer>();
+            services.AddTransient<IWordSorter, WordSorter>();
+            services.AddTransient<IFileReader, FileReader>();
+            services.AddTransient<IWordCounter, WordCounter>();
+            services.AddTransient<IFileWriter, FileWriter>();
         }
     }
 }
