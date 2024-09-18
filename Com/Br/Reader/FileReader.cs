@@ -14,14 +14,14 @@ namespace Com.Br.Reader
             StreamReader inputFileStreamReader = null;
 
             FileStream inputFileStream = null;
-
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             string inputLine;
 
             try
             {
                 inputFileStream = new FileStream(inputFilePath, FileMode.Open, FileAccess.Read, FileShare.Read, FileBufferReadSize, useAsync: true);
 
-                inputFileStreamReader = new StreamReader(inputFileStream, Encoding.UTF8, detectEncodingFromByteOrderMarks: true, bufferSize: FileBufferReadSize);
+                inputFileStreamReader = new StreamReader(inputFileStream, Encoding.GetEncoding(1252), detectEncodingFromByteOrderMarks: true, bufferSize: FileBufferReadSize);
 
                 while ((inputLine = await inputFileStreamReader.ReadLineAsync()) != null)
                 {
