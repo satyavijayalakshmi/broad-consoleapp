@@ -29,8 +29,7 @@ namespace Com.Br
 
             }
 
-            Console.WriteLine("Exit by pressing any key...");
-            Console.ReadKey();
+            Environment.Exit(1);
 
         }
     }
