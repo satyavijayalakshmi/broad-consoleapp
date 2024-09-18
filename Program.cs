@@ -4,7 +4,7 @@ namespace FileSearchApp
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
 
             if (args.Length == 0 || args[0] == "--help" || args[0] == "-h")
@@ -27,7 +27,7 @@ namespace FileSearchApp
             Console.WriteLine($"Argument 1: {inputFilePath}");
             Console.WriteLine($"Argument 2: {ouputFilePath}");
 
-            FileAnalyzer.ProcessFile(inputFilePath, ouputFilePath);
+            await FileAnalyzer.ProcessFile(inputFilePath, ouputFilePath);
 
 
         }

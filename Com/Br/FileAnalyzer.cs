@@ -5,14 +5,14 @@ namespace Com.Br
 {
     public class FileAnalyzer
     {
-        public static async void ProcessFile(string inputFilePath, string outputFilePath)
+        public static async Task ProcessFile(string inputFilePath, string outputFilePath)
         {
             var wordCountResult = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
 
             await foreach (var wordCountLine in FileReader.ReadInputFile(inputFilePath))
             {
                 Console.WriteLine("wordCountLine..." + wordCountLine);
-                await WordCounter.Counter(wordCountLine);
+                wordCountResult = await WordCounter.Counter(wordCountLine);
             }
             Console.WriteLine("wordCountResult..." + wordCountResult.Count);
             if (wordCountResult != null)
@@ -25,9 +25,11 @@ namespace Com.Br
                     Console.WriteLine($"{result.Key}: {result.Value}");
                 }
 
-                Console.WriteLine("Exit by pressing any key...");
-                Console.ReadKey();
+                
             }
+
+            Console.WriteLine("Exit by pressing any key...");
+            Console.ReadKey();
 
         }
     }
