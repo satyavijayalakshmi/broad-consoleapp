@@ -48,7 +48,13 @@ namespace FileSearchApp
             Console.WriteLine($"Argument 2: {ouputFilePath}");
 
             var fileAnalyzerService = serviceProvider.GetService<IFileAnalyzer>();
-            fileAnalyzerService?.ProcessFile(inputFilePath, ouputFilePath);
+
+            if(fileAnalyzerService == null)
+            {
+                Console.WriteLine("No instance....");
+            }
+
+            await fileAnalyzerService?.ProcessFile(inputFilePath, ouputFilePath);
 
 
         }
@@ -105,6 +111,7 @@ namespace FileSearchApp
             services.AddTransient<IFileReader, FileReader>();
             services.AddTransient<IWordCounter, WordCounter>();
             services.AddTransient<IFileWriter, FileWriter>();
+            services.AddTransient<Program>();
         }
     }
 }

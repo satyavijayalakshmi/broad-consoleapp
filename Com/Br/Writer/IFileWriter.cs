@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Com.Br.Writer
 {
-    internal interface IFileWriter
+    public interface IFileWriter
     {
         Task WriteOutputFile(string outputFilePath, string outputText);
     }

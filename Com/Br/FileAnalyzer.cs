@@ -17,6 +17,14 @@ namespace Com.Br
 
         private readonly IFileWriter _fileWriter;
 
+        public FileAnalyzer(IFileReader reader, IWordCounter counter, IWordSorter sorter, IFileWriter writer)
+        {
+            _fileReader = reader;
+            _wordCounter = counter;
+            _wordSorter = sorter;
+            _fileWriter = writer;
+        }
+
         public async Task ProcessFile(string inputFilePath, string outputFilePath)
         {
             var wordCountResult = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
