@@ -10,43 +10,48 @@ namespace FileSearchApp
             if (args.Length == 0 || args[0] == "--help" || args[0] == "-h")
             {
                 HelpText();
-                return;
+                Environment.Exit(0);
+            }
+
+            if (args.Length == 1)
+            {
+                OutFilePathError();
+                Environment.Exit(0);
             }
 
             if (args.Length != 2)
             {
                 ArgumentError();
-                return;
+                Environment.Exit(0);
             }
 
             string inputFilePath = args[0];
             string ouputFilePath = args[1];
-            ValidateInputFile(inputFilePath);
+            ValidateFilePathAndExtension(inputFilePath, ouputFilePath);
 
             
             Console.WriteLine("Application is running with the following arguments:");
             Console.WriteLine($"Argument 1: {inputFilePath}");
-            Console.WriteLine($"Argument 2: {ouputFilePath}");
-            Console.WriteLine("##############################################################################");
+            Console.WriteLine($"Argument 2: {ouputFilePath}");            
 
             await FileAnalyzer.ProcessFile(inputFilePath, ouputFilePath);
 
 
         }
 
-        static void ValidateInputFile(string inputFilePath)
+        static void ValidateFilePathAndExtension(string inputFilePath, string ouputFilePath)
         {
+            if ((Path.GetExtension(inputFilePath).ToLower() != ".txt") || (Path.GetExtension(ouputFilePath).ToLower() != ".txt"))
+            {
+                Console.WriteLine("Error: Arg 1 & Arg 2 file path's must have a .txt extension.");
+                Environment.Exit(0);
+            }
+
             if (!File.Exists(inputFilePath))
             {
                 FilePathError(inputFilePath);
-                return;
-            }
-
-            if (Path.GetExtension(inputFilePath).ToLower() != ".txt")
-            {
-                Console.WriteLine("Error: The input file must have a .txt extension.");
-                return;
-            }
+                Environment.Exit(0);
+            }           
         }
 
         static void HelpText()
@@ -70,8 +75,12 @@ namespace FileSearchApp
 
         static void FilePathError(string filePath)
         {
-            Console.WriteLine($"Error: The file '{filePath}' does not exist.");
-            Console.WriteLine("Please provide a valid file path.");           
+            Console.WriteLine($"Error: The file '{filePath}' does not exist.Please provide a valid file path.");            
+        }
+
+        static void OutFilePathError()
+        {
+            Console.WriteLine($"[arg2] is missing - Please provide output file path to publish the results");
         }
     }
 }
