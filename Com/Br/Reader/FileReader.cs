@@ -19,8 +19,6 @@ namespace Com.Br.Reader
 
             try
             {
-                Console.WriteLine("Processing input file..." + inputFilePath);
-
                 inputFileStream = new FileStream(inputFilePath, FileMode.Open, FileAccess.Read, FileShare.Read, FileBufferReadSize, useAsync: true);
 
                 inputFileStreamReader = new StreamReader(inputFileStream, Encoding.UTF8, detectEncodingFromByteOrderMarks: true, bufferSize: FileBufferReadSize);

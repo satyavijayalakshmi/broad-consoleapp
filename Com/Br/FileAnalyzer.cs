@@ -11,21 +11,22 @@ namespace Com.Br
 
             await foreach (var wordCountLine in FileReader.ReadInputFile(inputFilePath))
             {
-                Console.WriteLine("wordCountLine..." + wordCountLine);
                 wordCountResult = await WordCounter.Counter(wordCountLine);
             }
-            Console.WriteLine("wordCountResult..." + wordCountResult.Count);
+            
             if (wordCountResult != null)
             {
 
                 var wordCountSortedResult = WordSorter.Sorter(wordCountResult);
-
+                Console.WriteLine("############################### Output #######################################");
                 foreach (var result in wordCountSortedResult)
                 {
-                    Console.WriteLine($"{result.Key}: {result.Value}");
+                    
+                    Console.WriteLine($"{result.Key},{result.Value}");
+                   
                 }
+                Console.WriteLine("##############################################################################");
 
-                
             }
 
             Console.WriteLine("Exit by pressing any key...");

@@ -6,7 +6,7 @@ namespace FileSearchApp
     {
         static async Task Main(string[] args)
         {
-
+            Console.WriteLine("############################### Input ########################################");
             if (args.Length == 0 || args[0] == "--help" || args[0] == "-h")
             {
                 HelpText();
@@ -23,9 +23,11 @@ namespace FileSearchApp
             string ouputFilePath = args[1];
             ValidateInputFile(inputFilePath);
 
+            
             Console.WriteLine("Application is running with the following arguments:");
             Console.WriteLine($"Argument 1: {inputFilePath}");
             Console.WriteLine($"Argument 2: {ouputFilePath}");
+            Console.WriteLine("##############################################################################");
 
             await FileAnalyzer.ProcessFile(inputFilePath, ouputFilePath);
 

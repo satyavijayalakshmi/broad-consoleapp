@@ -9,8 +9,6 @@ namespace Com.Br.Counter
         public static async Task<Dictionary<string, int>> Counter(string inputLine)
         {
 
-            Console.WriteLine("Calculating word counts..."+ inputLine);            
-
             if (string.IsNullOrWhiteSpace(inputLine))
             {
                 return wordCountStore;
@@ -29,9 +27,7 @@ namespace Com.Br.Counter
                 }
                 
                 wordCountStore[word] = 1;                
-            }
-
-            Console.WriteLine("Calculating word counts..."+ wordCountStore.Count);
+            }            
 
             return wordCountStore;
         }
