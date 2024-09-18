@@ -4,7 +4,25 @@ Console application to find number of its occurrences in the source file
 ## Build from source
 ![run](run.png)
 
+## Project Keypoints
+#### Performance, reasonable economy of CPU and Memory resources
+- Used efficient Data Structures like Dictionary<TKey, TValue>, List<T> for better memory and performance
+- async/await is implemented for IO-bound tasks, making the best use of CPU
 
+####  Scalability on multicore/multiprocessor systems
+- Used Task for better workload
 
+#### Expect incorrect input from the user
+- User Friendly Messages are provided
+- Input validation is provided for file format and incorrect input
 
+#### Have a modular decomposition and contain unit tests
+- Structure the application into clear modules (classes, namespaces) following SOLID principles
+
+#### Have a convenient architecture for further expansion of functionality
+- Ensure classes are open for extension but closed for modification by using interfaces and abstract classes
+
+#### Have a description of the architecture in any convenient form
+
+## Test Results
 ![testresults](testresults.png)

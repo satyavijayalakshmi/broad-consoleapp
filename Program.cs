@@ -63,8 +63,9 @@ namespace FileSearchApp
             Console.WriteLine("You must pass exactly 2 arguments.");
             Console.WriteLine();
             Console.WriteLine("Options:");
-            Console.WriteLine("  --help, -h    Show this help message");            
-            Console.WriteLine("  [arguments]   Provide input file to search the word count as first argument");
+            Console.WriteLine("  --help, -h    Help message");            
+            Console.WriteLine("  [arg1]   Provide input file path to search the word count as first argument");
+            Console.WriteLine("  [arg21]   Provide output file path as second argument to publish the results");
         }
 
         static void ArgumentError()
