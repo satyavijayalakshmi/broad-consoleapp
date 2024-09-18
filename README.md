@@ -25,7 +25,7 @@ Console application to find number of its occurrences in the source file
 
 #### Have a description of the architecture in any convenient form
 - FileAnalyzer process the entire flow by making use of FileReader, FileWriter, WordCounter and WordSorter
-- FileReader is responsible to read the input file 
+- FileReader is responsible to read the input file with Windows-1252 encoding
 - FileWriter is responsible to write the output result file
 - WordCounter is responsible to take the each input line in async manner to preserve the result back
 - WordSorter is responsible to sort the result at the end
