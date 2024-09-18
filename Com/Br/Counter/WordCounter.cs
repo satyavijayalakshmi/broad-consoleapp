@@ -4,7 +4,7 @@ namespace Com.Br.Counter
 {
     public class WordCounter
     {
-        static Dictionary<string, int> wordCountStore = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+        public static Dictionary<string, int> wordCountStore = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
 
         public static async Task<Dictionary<string, int>> Counter(string inputLine)
         {
