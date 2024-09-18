@@ -1,5 +1,6 @@
 using Com.Br.Counter;
 using Com.Br.Reader;
+using Com.Br.Writer;
 
 namespace Com.Br
 {
@@ -18,16 +19,16 @@ namespace Com.Br
             {
 
                 var wordCountSortedResult = WordSorter.Sorter(wordCountResult);
-                Console.WriteLine("############################### Output #######################################");
+                Console.WriteLine("##############################################################################");
+                
+
                 foreach (var result in wordCountSortedResult)
                 {
-                    
-                    Console.WriteLine($"{result.Key},{result.Value}");
-                   
-                }
-                Console.WriteLine("##############################################################################");
-
+                    await FileWriter.WriteOutputFile(outputFilePath, $"{result.Key},{result.Value}");
+                }                
             }
+
+            Console.WriteLine("############ Results published in " + outputFilePath + " file... #############");
 
             Environment.Exit(1);
 
