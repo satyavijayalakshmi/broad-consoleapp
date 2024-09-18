@@ -5,7 +5,7 @@ VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileSearchApp", "FileSearchApp.csproj", "{B957191B-566E-4861-9C64-A957DCA0B52C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileSearchAppUnitTests", "..\FileSearchAppUnitTests\FileSearchAppUnitTests.csproj", "{6FA0742B-E680-4BDC-BBDF-BB0DA11D55F4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSearchAppUnitTests", "FileSearchAppUnitTests\FileSearchAppUnitTests.csproj", "{B7086BE6-7A16-4D14-B214-49EB5BFD0112}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{B957191B-566E-4861-9C64-A957DCA0B52C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B957191B-566E-4861-9C64-A957DCA0B52C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B957191B-566E-4861-9C64-A957DCA0B52C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6FA0742B-E680-4BDC-BBDF-BB0DA11D55F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6FA0742B-E680-4BDC-BBDF-BB0DA11D55F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6FA0742B-E680-4BDC-BBDF-BB0DA11D55F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6FA0742B-E680-4BDC-BBDF-BB0DA11D55F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7086BE6-7A16-4D14-B214-49EB5BFD0112}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7086BE6-7A16-4D14-B214-49EB5BFD0112}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7086BE6-7A16-4D14-B214-49EB5BFD0112}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7086BE6-7A16-4D14-B214-49EB5BFD0112}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
