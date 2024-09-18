@@ -14,7 +14,7 @@ namespace Com.Br.Reader
             StreamReader inputFileStreamReader = null;
 
             FileStream inputFileStream = null;
-            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            
             string inputLine;
 
             try

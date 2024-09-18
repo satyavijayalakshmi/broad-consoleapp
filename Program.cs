@@ -5,6 +5,7 @@ using Com.Br.Sorter;
 using Com.Br.Writer;
 using FileSearchApp.Com.Br;
 using Microsoft.Extensions.DependencyInjection;
+using System.Text;
 
 namespace FileSearchApp
 {
@@ -12,6 +13,7 @@ namespace FileSearchApp
     {
         static async Task Main(string[] args)
         {
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
             var serviceCollection = new ServiceCollection();
 
